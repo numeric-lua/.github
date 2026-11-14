@@ -17,9 +17,9 @@ are separate Git checkouts:
 | `numeric-lua-agents/` | `numeric-lua/numeric-lua-agents` | org-only promo scheduler |
 | `.github/` | `numeric-lua/.github` | org profile and shared policy |
 
-Until the organization exists, work happens in
-`/home/machine/Códigos/luatorch/.numeric-lua/`. `luatorch` itself remains at
-`/home/machine/Códigos/luatorch` until transferred.
+The repositories live in `/home/machine/Códigos/numeric-lua/`. `luatorch` is
+currently a symlink to `/home/machine/Códigos/luatorch`; both paths are valid.
+The organization is <https://github.com/numeric-lua>.
 
 ## Non-negotiable safety
 
