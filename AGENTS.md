@@ -14,6 +14,7 @@ are separate Git checkouts:
 | `numlua/` | `numeric-lua/numlua` | NumPy-shaped arrays, `.npy`, linalg |
 | `luaplotlib/` | `numeric-lua/luaplotlib` | SVG plotting |
 | `tensorlua/` | `numeric-lua/tensorlua` | thin training API over luatorch |
+| `lua-polars/` | `numeric-lua/lua-polars` | eager DataFrame binding over Rust Polars |
 | `numeric-lua-agents/` | `numeric-lua/numeric-lua-agents` | org-only promo scheduler |
 | `.github/` | `numeric-lua/.github` | org profile and shared policy |
 
@@ -99,6 +100,7 @@ luatorch:              ./scripts/test.sh
 numlua:                ./scripts/test.sh
 luaplotlib:            ./scripts/test.sh
 tensorlua:             ./scripts/test.sh
+lua-polars:            ./scripts/test.sh
 numeric-lua-agents:    bash tests/promo-agents.sh
 ```
 
