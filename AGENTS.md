@@ -24,9 +24,11 @@ The organization is <https://github.com/numeric-lua>.
 
 ## Non-negotiable safety
 
-- **No pushes to `main`, no merges, no releases, no package publishes, no
-  organization-setting changes** unless the human coordinator explicitly asks.
-  Agents work in worktrees/branches and leave draft PRs for review.
+- **Direct pushes to `main` are authorized by the human coordinator.** No pull
+  request is required. Scheduled agents still work in isolated worktrees; they
+  may push their tested branches, and the coordinator lands them on `main`.
+- **No releases, package publishes, or organization-setting changes** unless
+  the human coordinator explicitly asks.
 - **No secrets.** API keys belong in `~/.dsh` or a mode-600 env file outside the
   repositories. Never put credentials in tasks, prompts, commits, tests, or
   screenshots.
@@ -85,8 +87,9 @@ Implement ... Acceptance: ...
 
 For such a task, the agent gets one worktree per repository on the same branch
 slug, runs each repository's tests, and commits per repository. If one repo
-fails, do not discard the other worktree. The coordinator reviews linked draft
-PRs; nothing is merged automatically.
+fails, do not discard the other worktree. The coordinator reviews the linked
+branches and may land them on `main` directly; the scheduler does not auto-merge
+or open pull requests unless configured to.
 
 A task must be a focused brief with acceptance criteria, not "improve the
 project". Empty queues are allowed; never invent filler work.
@@ -133,9 +136,10 @@ headless DSH agent, inside configured discount windows, on queued tasks.
 - Promo hours are configuration. Verify the provider's current schedule before
   changing windows; the Maria config points at
   <https://api-docs.deepseek.com/news/news260813> as its source.
-- Use a stop margin and a `max_tasks_per_day` cap. Defaults must keep
-  `push = false`, `open_pr = false`, and `maintenance.enabled = false` until the
-  human has reviewed several agent branches.
+- Use a stop margin and a `max_tasks_per_day` cap. Defaults keep
+  `push = false`, `open_pr = false`, and `maintenance.enabled = false`; this
+  coordinator has authorized `push = true` and `open_pr = false` for the
+  numeric-lua service, with direct `main` pushes allowed.
 - The scheduler must never run a task in a dirty checkout, must use worktrees,
   and must finalize work on `SIGTERM` before the window closes.
 - A host-wide lock prevents overlapping schedulers. If the Maria scheduler does
