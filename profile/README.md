@@ -14,6 +14,7 @@ benchmarks.
 | [**luaplotlib**](https://github.com/numeric-lua/luaplotlib) | matplotlib-shaped SVG plotting |
 | [**tensorlua**](https://github.com/numeric-lua/tensorlua) | thin Keras/TensorFlow-style training API |
 | [**lua-polars**](https://github.com/numeric-lua/lua-polars) | DataFrame bindings over the Rust Polars engine |
+| [**lua-notebooks**](https://github.com/numeric-lua/lua-notebooks) | native LÖVR notebooks with a 3D viewport |
 | [**numeric-lua-agents**](https://github.com/numeric-lua/numeric-lua-agents) | org-only promo-window agent scheduler |
 
 ## Design
@@ -46,6 +47,8 @@ compiler, fused reductions, softmax/log-softmax, cross-entropy, and 261 tests.
 `numlua`, `luaplotlib`, and `tensorlua` are the first organization MVPs.
 `lua-polars` adds a columnar DataFrame surface: an unofficial LuaJIT binding to
 the Rust Polars engine through a small C ABI, not another tensor core.
+`lua-notebooks` is the first non-web notebook experiment: a LÖVR host, isolated
+Lua kernels, and host-rendered 3D scene outputs.
 
 ## Licenses
 
