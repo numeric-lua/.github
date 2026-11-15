@@ -13,6 +13,7 @@ benchmarks.
 | [**numlua**](https://github.com/numeric-lua/numlua) | NumPy-shaped arrays, broadcasting, linalg, `.npy` I/O |
 | [**luaplotlib**](https://github.com/numeric-lua/luaplotlib) | matplotlib-shaped SVG plotting |
 | [**tensorlua**](https://github.com/numeric-lua/tensorlua) | thin Keras/TensorFlow-style training API |
+| [**lua-polars**](https://github.com/numeric-lua/lua-polars) | DataFrame bindings over the Rust Polars engine |
 | [**numeric-lua-agents**](https://github.com/numeric-lua/numeric-lua-agents) | org-only promo-window agent scheduler |
 
 ## Design
@@ -43,6 +44,8 @@ benchmarks.
 Early, but working. luatorch has a tensor core, autograd, `nn`/`optim`, a fusion
 compiler, fused reductions, softmax/log-softmax, cross-entropy, and 261 tests.
 `numlua`, `luaplotlib`, and `tensorlua` are the first organization MVPs.
+`lua-polars` adds a columnar DataFrame surface: an unofficial LuaJIT binding to
+the Rust Polars engine through a small C ABI, not another tensor core.
 
 ## Licenses
 
