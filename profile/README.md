@@ -2,6 +2,8 @@
 
 A numerical computing stack for LuaJIT, built around one tensor engine.
 
+[![❤ Sponsor on GitHub](https://img.shields.io/badge/%E2%9D%A4%20Sponsor-GitHub-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/Mateus-M-Reis)
+
 Lua has excellent small libraries and a long history of numeric computing, but
 the pieces rarely share an array model. `numeric-lua` is an attempt to build a
 coherent stack instead: one core, several focused surfaces, and a single set of
@@ -60,6 +62,17 @@ Lua kernels, and host-rendered 3D scene outputs.
 
 BSD-3-Clause per repository. luatorch links against libtorch/PyTorch and vendors
 Lua Fun under its MIT license; see the repository notices.
+
+## Support
+
+numeric-lua is free software under BSD-3-Clause. Donations are optional and
+never unlock features or hold back builds.
+
+<a href="https://github.com/sponsors/Mateus-M-Reis"><img src="https://img.shields.io/badge/Sponsor%20on-GitHub-ea4aaa?logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub"></a>
+
+You can also star the repositories, report bugs, or read
+[SUPPORT.md](https://github.com/numeric-lua/.github/blob/main/SUPPORT.md) for
+other ways to help.
 
 ## Contributing
 
