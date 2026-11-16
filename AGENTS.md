@@ -13,8 +13,9 @@ are separate Git checkouts:
 | `luatorch/` | `numeric-lua/luatorch` | tensor core, ATen FFI, autograd, fusion, `nn`/`optim` |
 | `numlua/` | `numeric-lua/numlua` | NumPy-shaped arrays, `.npy`, linalg |
 | `luaplotlib/` | `numeric-lua/luaplotlib` | SVG plotting |
-| `tensorlua/` | `numeric-lua/tensorlua` | thin training API over luatorch |
+| `tensorflow-lua/` | `numeric-lua/tensorflow-lua` | native LuaJIT binding to the TensorFlow C API |
 | `lua-polars/` | `numeric-lua/lua-polars` | eager DataFrame binding over Rust Polars |
+| `lua-notebooks/` | `numeric-lua/lua-notebooks` | LÖVR notebook frontend and kernels |
 | `numeric-lua-agents/` | `numeric-lua/numeric-lua-agents` | org-only promo scheduler |
 | `.github/` | `numeric-lua/.github` | org profile and shared policy |
 
@@ -44,10 +45,13 @@ The organization is <https://github.com/numeric-lua>.
 
 ## Architecture rules
 
-- **One tensor/autograd engine.** The core is luatorch. `numlua` is a
-  NumPy-shaped facade over luatorch tensors, `tensorlua` wraps `torch.nn` /
-  `torch.optim`, and `luaplotlib` plots arrays. Do not add a second FFI tensor
-  implementation, a second autograd graph, or a second dtype-promotion system.
+- **One tensor/autograd engine for the numeric-lua stack.** The core is
+  luatorch. `numlua` is a NumPy-shaped facade over luatorch tensors and
+  `luaplotlib` plots arrays. Do not add a second FFI tensor implementation, a
+  second autograd graph, or a second dtype-promotion system.
+- **TensorFlow is a deliberate external runtime.** `tensorflow-lua` is a native
+  LuaJIT binding to TensorFlow's C API. It does not wrap or replace luatorch,
+  does not link libtorch, and is not part of the luatorch dependency graph.
 - If a shared lower layer becomes necessary, propose `numeric-core` as a
   deliberate migration; do not fork the core inside another repository.
 - Keep the Lua surface **1-based** for dimensions, indices, labels, sort/topk,
@@ -64,13 +68,15 @@ The organization is <https://github.com/numeric-lua>.
 ```
 luatorch
   ├── numlua
-  ├── tensorlua
   └── luaplotlib (through numlua arrays; optional direct tensor adapter)
+
+tensorflow-lua (standalone; TensorFlow C API)
+lua-polars    (standalone; Rust Polars C ABI)
 ```
 
-A change that alters a public luatorch API used by `numlua` or `tensorlua` is a
-cross-repo change. Queue it as one task that names both repositories, or land
-the core change first with a compatibility shim.
+A change that alters a public luatorch API used by `numlua` is a cross-repo
+change. Queue it as one task that names both repositories, or land the core
+change first with a compatibility shim.
 
 ## Cross-repo tasks
 
@@ -102,8 +108,9 @@ Run from the repository root unless noted:
 luatorch:              ./scripts/test.sh
 numlua:                ./scripts/test.sh
 luaplotlib:            ./scripts/test.sh
-tensorlua:             ./scripts/test.sh
+tensorflow-lua:        ./scripts/test.sh
 lua-polars:            ./scripts/test.sh
+lua-notebooks:         make test
 numeric-lua-agents:    bash tests/promo-agents.sh
 ```
 

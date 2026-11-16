@@ -12,7 +12,7 @@ benchmarks.
 | [**luatorch**](https://github.com/numeric-lua/luatorch) | tensor core, ATen FFI, autograd, fusion compiler, `nn`/`optim` |
 | [**numlua**](https://github.com/numeric-lua/numlua) | NumPy-shaped arrays, broadcasting, linalg, `.npy` I/O |
 | [**luaplotlib**](https://github.com/numeric-lua/luaplotlib) | matplotlib-shaped SVG plotting |
-| [**tensorlua**](https://github.com/numeric-lua/tensorlua) | thin Keras/TensorFlow-style training API |
+| [**tensorflow-lua**](https://github.com/numeric-lua/tensorflow-lua) | native LuaJIT binding to the TensorFlow C API |
 | [**lua-polars**](https://github.com/numeric-lua/lua-polars) | DataFrame bindings over the Rust Polars engine |
 | [**lua-notebooks**](https://github.com/numeric-lua/lua-notebooks) | native LÖVR notebooks with a 3D viewport |
 | [**numeric-lua-agents**](https://github.com/numeric-lua/numeric-lua-agents) | org-only promo-window agent scheduler |
@@ -22,15 +22,19 @@ benchmarks.
 ```
                     luatorch
         tensor core / ATen / autograd / fusion
-             /              |              \
-          numlua         tensorlua       luaplotlib
-      NumPy-shaped     training API      SVG plots
-         arrays        over nn/optim     on arrays
+             /                     \
+          numlua                luaplotlib
+      NumPy-shaped             SVG plots
+         arrays                on arrays
+
+tensorflow-lua  ->  TensorFlow C API (independent runtime)
+lua-polars      ->  Rust Polars (independent columnar engine)
 ```
 
-- **One engine.** `numlua` is a facade over luatorch tensors, not a second
-  tensor implementation. `tensorlua` wraps `torch.nn`/`torch.optim`.
-  `luaplotlib` plots arrays without owning a numeric core.
+- **One engine for the Lua numeric stack.** `numlua` is a facade over luatorch
+  tensors, not a second tensor implementation. `luaplotlib` plots arrays without
+  owning a numeric core. `tensorflow-lua` deliberately binds TensorFlow's own C
+  runtime instead of wrapping luatorch.
 - **Lua conventions.** Dimensions, indices, labels, argmax, sort/topk, and
   gather/scatter are 1-based. File formats such as `.npy` remain byte
   compatible with NumPy.
@@ -43,10 +47,12 @@ benchmarks.
 ## Status
 
 Early, but working. luatorch has a tensor core, autograd, `nn`/`optim`, a fusion
-compiler, fused reductions, softmax/log-softmax, cross-entropy, and 261 tests.
-`numlua`, `luaplotlib`, and `tensorlua` are the first organization MVPs.
-`lua-polars` adds a columnar DataFrame surface: an unofficial LuaJIT binding to
-the Rust Polars engine through a small C ABI, not another tensor core.
+compiler, fused reductions, softmax/log-softmax, cross-entropy, and 281 tests.
+`numlua`, `luaplotlib`, and `tensorflow-lua` are the first organization MVPs.
+`tensorflow-lua` builds, loads, and trains TensorFlow graphs from LuaJIT through
+the official C API. `lua-polars` adds a columnar DataFrame surface: an
+unofficial LuaJIT binding to the Rust Polars engine through a small C ABI, not
+another tensor core.
 `lua-notebooks` is the first non-web notebook experiment: a LÖVR host, isolated
 Lua kernels, and host-rendered 3D scene outputs.
 
