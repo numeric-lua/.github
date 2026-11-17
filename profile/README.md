@@ -57,7 +57,7 @@ Early, but working:
 | **numlua** | 0.1.0 MVP; NumPy-shaped facade, `.npy` and text/CSV I/O, 64 tests |
 | **luaplotlib** | 0.1.0 MVP; SVG line/scatter/histogram/bar plots, log axes, scene IR, 55 tests |
 | **tensorflow-lua** | 0.10.0 alpha; TensorFlow C API graph runtime and training, 142 tests |
-| **tensorflow-lua-addons** | 0.4.0; TensorFlow Addons parity subset, 15 tests |
+| **tensorflow-lua-addons** | 0.5.0; TensorFlow Addons parity subset, 16 tests |
 | **lua-notebooks** | early; LÖVR desktop notebooks, remote LuaJIT gateway, browser/Canvas front-end |
 | **lua-polars** | 0.1.0 eager MVP; Polars CSV/Parquet/SQL via a Rust C ABI |
 
