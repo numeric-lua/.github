@@ -17,8 +17,8 @@ benchmarks.
 | [**tensorflow-lua**](https://github.com/numeric-lua/tensorflow-lua) | native LuaJIT binding to the TensorFlow C API |
 | [**tensorflow-lua-addons**](https://github.com/numeric-lua/tensorflow-lua-addons) | TensorFlow Addons parity subset for LuaJIT |
 | [**lua-polars**](https://github.com/numeric-lua/lua-polars) | DataFrame bindings over the Rust Polars engine |
-| [**lua-notebooks**](https://github.com/numeric-lua/lua-notebooks) | native LÖVR notebooks with a 3D viewport |
-| [**numeric-lua-agents**](https://github.com/numeric-lua/numeric-lua-agents) | org-only promo-window agent scheduler |
+| [**lua-notebooks**](https://github.com/numeric-lua/lua-notebooks) | LÖVR 3D notebooks plus a native browser/remote-kernel front-end |
+| [**numeric-lua-agents**](https://github.com/numeric-lua/numeric-lua-agents) | org-only promo-window agent scheduler (coordinator-only) |
 
 ## Design
 
@@ -49,16 +49,24 @@ lua-polars      ->  Rust Polars (independent columnar engine)
 
 ## Status
 
-Early, but working. luatorch has a tensor core, autograd, `nn`/`optim`, a fusion
-compiler, fused reductions, softmax/log-softmax, cross-entropy, and 281 tests.
-`numlua`, `luaplotlib`, `tensorflow-lua`, and `tensorflow-lua-addons` are the
-first organization MVPs.
+Early, but working:
+
+| project | status |
+| --- | --- |
+| **luatorch** | 0.7.0 alpha, CPU; tensor core, autograd, `nn`/`optim`, fusion compiler, fused reductions/softmax/cross-entropy, 281 tests |
+| **numlua** | 0.1.0 MVP; NumPy-shaped facade, `.npy` and text/CSV I/O, 64 tests |
+| **luaplotlib** | 0.1.0 MVP; SVG line/scatter/histogram/bar plots, log axes, scene IR, 55 tests |
+| **tensorflow-lua** | 0.10.0 alpha; TensorFlow C API graph runtime and training, 142 tests |
+| **tensorflow-lua-addons** | 0.4.0; TensorFlow Addons parity subset, 15 tests |
+| **lua-notebooks** | early; LÖVR desktop notebooks, remote LuaJIT gateway, browser/Canvas front-end |
+| **lua-polars** | 0.1.0 eager MVP; Polars CSV/Parquet/SQL via a Rust C ABI |
+
 `tensorflow-lua` builds, loads, and trains TensorFlow graphs from LuaJIT through
 the official C API. `lua-polars` adds a columnar DataFrame surface: an
 unofficial LuaJIT binding to the Rust Polars engine through a small C ABI, not
-another tensor core.
-`lua-notebooks` is the first non-web notebook experiment: a LÖVR host, isolated
-Lua kernels, and host-rendered 3D scene outputs.
+another tensor core. `lua-notebooks` now has two independent front-ends: the
+native LÖVR host and a dependency-free browser app that talks to the remote
+kernel over WebSocket.
 
 ## Licenses
 
@@ -79,5 +87,9 @@ other ways to help.
 ## Contributing
 
 Read the organization-level [AGENTS.md](https://github.com/numeric-lua/.github/blob/main/AGENTS.md)
-before changing a repository. Agent work lands on branches and draft PRs; the
-coordinator reviews and merges.
+before changing a repository. Scheduled agents work in isolated worktrees;
+their tested branches may be fast-forwarded to `main` when the scheduler is
+configured for that repository. The coordinator reviews all changes.
+
+`numeric-lua-agents` and `.github` are **coordinator-only** and are not in the
+agent scheduler.

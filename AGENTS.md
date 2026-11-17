@@ -151,6 +151,9 @@ headless DSH agent, inside configured discount windows, on queued tasks.
   numeric-lua service, with direct `main` pushes allowed.
 - The scheduler must never run a task in a dirty checkout, must use worktrees,
   and must finalize work on `SIGTERM` before the window closes.
+- **Coordinator-only repositories.** `numeric-lua-agents` and `.github` must
+  not be added to agent queues and must not be touched by scheduled agents.
+  The coordinator/DSH main session owns them.
 - A host-wide lock prevents overlapping schedulers. If the Maria scheduler does
   not honor the same lock, run only one of them.
 
