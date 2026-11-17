@@ -14,6 +14,7 @@ are separate Git checkouts:
 | `numlua/` | `numeric-lua/numlua` | NumPy-shaped arrays, `.npy`, linalg |
 | `luaplotlib/` | `numeric-lua/luaplotlib` | SVG plotting |
 | `tensorflow-lua/` | `numeric-lua/tensorflow-lua` | native LuaJIT binding to the TensorFlow C API |
+| `tensorflow-lua-addons/` | `numeric-lua/tensorflow-lua-addons` | Addons parity for tensorflow-lua |
 | `lua-polars/` | `numeric-lua/lua-polars` | eager DataFrame binding over Rust Polars |
 | `lua-notebooks/` | `numeric-lua/lua-notebooks` | LÖVR notebook frontend and kernels |
 | `numeric-lua-agents/` | `numeric-lua/numeric-lua-agents` | org-only promo scheduler |
@@ -109,6 +110,7 @@ luatorch:              ./scripts/test.sh
 numlua:                ./scripts/test.sh
 luaplotlib:            ./scripts/test.sh
 tensorflow-lua:        ./scripts/test.sh
+tensorflow-lua-addons: ./scripts/test.sh
 lua-polars:            ./scripts/test.sh
 lua-notebooks:         make test
 numeric-lua-agents:    bash tests/promo-agents.sh

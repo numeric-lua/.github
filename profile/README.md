@@ -15,6 +15,7 @@ benchmarks.
 | [**numlua**](https://github.com/numeric-lua/numlua) | NumPy-shaped arrays, broadcasting, linalg, `.npy` I/O |
 | [**luaplotlib**](https://github.com/numeric-lua/luaplotlib) | matplotlib-shaped SVG plotting |
 | [**tensorflow-lua**](https://github.com/numeric-lua/tensorflow-lua) | native LuaJIT binding to the TensorFlow C API |
+| [**tensorflow-lua-addons**](https://github.com/numeric-lua/tensorflow-lua-addons) | TensorFlow Addons parity subset for LuaJIT |
 | [**lua-polars**](https://github.com/numeric-lua/lua-polars) | DataFrame bindings over the Rust Polars engine |
 | [**lua-notebooks**](https://github.com/numeric-lua/lua-notebooks) | native LÖVR notebooks with a 3D viewport |
 | [**numeric-lua-agents**](https://github.com/numeric-lua/numeric-lua-agents) | org-only promo-window agent scheduler |
@@ -50,7 +51,8 @@ lua-polars      ->  Rust Polars (independent columnar engine)
 
 Early, but working. luatorch has a tensor core, autograd, `nn`/`optim`, a fusion
 compiler, fused reductions, softmax/log-softmax, cross-entropy, and 281 tests.
-`numlua`, `luaplotlib`, and `tensorflow-lua` are the first organization MVPs.
+`numlua`, `luaplotlib`, `tensorflow-lua`, and `tensorflow-lua-addons` are the
+first organization MVPs.
 `tensorflow-lua` builds, loads, and trains TensorFlow graphs from LuaJIT through
 the official C API. `lua-polars` adds a columnar DataFrame surface: an
 unofficial LuaJIT binding to the Rust Polars engine through a small C ABI, not
