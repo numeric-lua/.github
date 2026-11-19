@@ -54,7 +54,7 @@ Early, but working:
 | project | status |
 | --- | --- |
 | **luatorch** | 0.8.0 alpha, CPU; tensor core, autograd, `nn`/`optim` with parameter groups, RNN/LSTM, safetensors, fusion compiler, 295 tests |
-| **numlua** | 0.1.0 MVP; NumPy-shaped facade, `.npy` and text/CSV I/O, 64 tests |
+| **numlua** | 0.2.0; NumPy-shaped facade, layout/npz/linalg, `.npy` and text/CSV I/O, 87 tests |
 | **luaplotlib** | 0.2.0 MVP; SVG line/scatter/histogram/bar/error-bar plots, log axes, scene IR, 59 tests |
 | **tensorflow-lua** | 0.10.0 alpha; TensorFlow C API graph runtime and training, 142 tests |
 | **tensorflow-lua-addons** | 0.5.0; TensorFlow Addons parity subset, 16 tests |
