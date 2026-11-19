@@ -55,7 +55,7 @@ Early, but working:
 | --- | --- |
 | **luatorch** | 0.10.0 alpha, CPU; tensor core, autograd, `nn`/`optim`, multi-layer RNN/LSTM, safetensors, fusion compiler, 303 tests |
 | **numlua** | 0.2.0; NumPy-shaped facade, layout/npz/linalg, `.npy` and text/CSV I/O, 88 tests |
-| **luaplotlib** | 4.1.0; SVG/HTML plotting with true 3-D axes, gridspec, 114 tests |
+| **luaplotlib** | 4.2.0; SVG/HTML plotting with 3-D ticks/labels/view, gridspec, 115 tests |
 | **tensorflow-lua** | 2.0.0; TensorFlow C API graph runtime, transformers, deployment bundles, 175 tests |
 | **tensorflow-lua-addons** | 0.5.0; TensorFlow Addons parity subset, 16 tests |
 | **lua-notebooks** | early; LÖVR desktop notebooks, remote LuaJIT gateway, browser/Canvas front-end |
