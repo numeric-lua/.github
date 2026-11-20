@@ -58,7 +58,7 @@ Early, but working:
 | **luaplotlib** | 4.4.0; SVG/HTML/PNG/PDF plotting with 3-D surfaces, 117 tests |
 | **tensorflow-lua** | 2.0.0; TensorFlow C API graph runtime, transformers, deployment bundles, 175 tests |
 | **tensorflow-lua-addons** | 0.5.0; TensorFlow Addons parity subset, 16 tests |
-| **lua-notebooks** | 1.26.0; LÖVR notebooks with warm Neovim, popup completion, private RPC |
+| **lua-notebooks** | 1.28.0; LÖVR notebooks with warm Neovim, parts, tags and exports |
 | **lua-polars** | 0.1.0 eager MVP; Polars CSV/Parquet/SQL via a Rust C ABI |
 
 `tensorflow-lua` builds, loads, and trains TensorFlow graphs from LuaJIT through
