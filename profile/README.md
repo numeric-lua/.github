@@ -53,12 +53,12 @@ Early, but working:
 
 | project | status |
 | --- | --- |
-| **luatorch** | 0.13.0 |
-| **numlua** | 0.5.0 |
+| **luatorch** | 0.14.0 |
+| **numlua** | 0.6.0 |
 | **luaplotlib** | 4.8.0 |
 | **tensorflow-lua** | 2.0.0; TensorFlow C API graph runtime, transformers, deployment bundles, 175 tests |
 | **tensorflow-lua-addons** | 0.5.0; TensorFlow Addons parity subset, 16 tests |
-| **lua-notebooks** | 1.39.0 |
+| **lua-notebooks** | 1.40.0 |
 | **lua-polars** | 0.6.0 |
 
 `tensorflow-lua` builds, loads, and trains TensorFlow graphs from LuaJIT through
