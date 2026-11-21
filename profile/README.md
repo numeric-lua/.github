@@ -55,7 +55,7 @@ Early, but working:
 | --- | --- |
 | **luatorch** | 0.16.0 |
 | **numlua** | 0.8.0 |
-| **luaplotlib** | 4.10.0 |
+| **luaplotlib** | 4.11.0 |
 | **tensorflow-lua** | 2.0.0; TensorFlow C API graph runtime, transformers, deployment bundles, 175 tests |
 | **tensorflow-lua-addons** | 0.5.0; TensorFlow Addons parity subset, 16 tests |
 | **lua-notebooks** | 1.41.0 |
