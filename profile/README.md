@@ -58,7 +58,7 @@ Early, but working:
 | **luaplotlib** | 4.6.0 |
 | **tensorflow-lua** | 2.0.0; TensorFlow C API graph runtime, transformers, deployment bundles, 175 tests |
 | **tensorflow-lua-addons** | 0.5.0; TensorFlow Addons parity subset, 16 tests |
-| **lua-notebooks** | 1.38.0 |
+| **lua-notebooks** | 1.39.0 |
 | **lua-polars** | 0.6.0 |
 
 `tensorflow-lua` builds, loads, and trains TensorFlow graphs from LuaJIT through
