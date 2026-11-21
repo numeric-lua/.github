@@ -59,7 +59,7 @@ Early, but working:
 | **tensorflow-lua** | 2.0.0; TensorFlow C API graph runtime, transformers, deployment bundles, 175 tests |
 | **tensorflow-lua-addons** | 0.5.0; TensorFlow Addons parity subset, 16 tests |
 | **lua-notebooks** | 1.42.0 |
-| **lua-polars** | 0.6.0 |
+| **lua-polars** | 0.7.0 |
 
 `tensorflow-lua` builds, loads, and trains TensorFlow graphs from LuaJIT through
 the official C API. `lua-polars` adds a columnar DataFrame surface: an
