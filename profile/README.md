@@ -54,7 +54,7 @@ Early, but working:
 | project | status |
 | --- | --- |
 | **luatorch** | 0.27.0 |
-| **numlua** | 0.18.0 |
+| **numlua** | 0.19.0 |
 | **luaplotlib** | 4.20.0 |
 | **tensorflow-lua** | 2.0.0 |
 | **tensorflow-lua-addons** | 0.9.0 |
