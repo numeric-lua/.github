@@ -53,7 +53,7 @@ Early, but working:
 
 | project | status |
 | --- | --- |
-| **luatorch** | 0.26.0 |
+| **luatorch** | 0.27.0 |
 | **numlua** | 0.18.0 |
 | **luaplotlib** | 4.20.0 |
 | **tensorflow-lua** | 2.0.0; TensorFlow C API graph runtime, transformers, deployment bundles, 175 tests |
