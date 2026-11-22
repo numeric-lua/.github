@@ -53,13 +53,13 @@ Early, but working:
 
 | project | status |
 | --- | --- |
-| **luatorch** | 0.25.0 |
-| **numlua** | 0.17.0 |
-| **luaplotlib** | 4.19.0 |
+| **luatorch** | 0.26.0 |
+| **numlua** | 0.18.0 |
+| **luaplotlib** | 4.20.0 |
 | **tensorflow-lua** | 2.0.0; TensorFlow C API graph runtime, transformers, deployment bundles, 175 tests |
 | **tensorflow-lua-addons** | 0.5.0; TensorFlow Addons parity subset, 16 tests |
-| **lua-notebooks** | 1.50.0 |
-| **lua-polars** | 0.15.0 |
+| **lua-notebooks** | 1.51.0 |
+| **lua-polars** | 0.16.0 |
 
 `tensorflow-lua` builds, loads, and trains TensorFlow graphs from LuaJIT through
 the official C API. `lua-polars` adds a columnar DataFrame surface: an
