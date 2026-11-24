@@ -18,7 +18,8 @@ benchmarks.
 | [**tensorflow-lua-addons**](https://github.com/numeric-lua/tensorflow-lua-addons) | TensorFlow Addons parity subset for LuaJIT |
 | [**lua-polars**](https://github.com/numeric-lua/lua-polars) | DataFrame bindings over the Rust Polars engine |
 | [**lua-notebooks**](https://github.com/numeric-lua/lua-notebooks) | LÖVR 3D notebooks plus a native browser/remote-kernel front-end |
-| [**numeric-lua-agents**](https://github.com/numeric-lua/numeric-lua-agents) | org-only promo-window agent scheduler (coordinator-only) |
+| [**luar**](https://github.com/numeric-lua/luar) | Lua 5.5 runtime with a LuaJIT-style FFI and tiered JIT |
+| [**numeric-lua-agents**](https://github.com/numeric-lua/numeric-lua-agents) | permanent project-worker service and queue scheduler (coordinator-only) |
 
 ## Design
 
@@ -53,13 +54,14 @@ Early, but working:
 
 | project | status |
 | --- | --- |
-| **luatorch** | 0.27.0 |
-| **numlua** | 0.19.0 |
-| **luaplotlib** | 4.20.0 |
-| **tensorflow-lua** | 2.0.0 |
-| **tensorflow-lua-addons** | 0.9.0 |
-| **lua-notebooks** | 1.51.0 |
-| **lua-polars** | 0.16.0 |
+| **luatorch** | 0.34.0 |
+| **numlua** | 0.26.0 |
+| **luaplotlib** | 4.28.0 |
+| **tensorflow-lua** | 2.8.0 |
+| **tensorflow-lua-addons** | 0.17.0 |
+| **lua-notebooks** | 1.59.0 |
+| **lua-polars** | 0.24.0 |
+| **luar** | 0.241.0 |
 
 `tensorflow-lua` builds, loads, and trains TensorFlow graphs from LuaJIT through
 the official C API. `lua-polars` adds a columnar DataFrame surface: an
@@ -87,9 +89,10 @@ other ways to help.
 ## Contributing
 
 Read the organization-level [AGENTS.md](https://github.com/numeric-lua/.github/blob/main/AGENTS.md)
-before changing a repository. Scheduled agents work in isolated worktrees;
-their tested branches may be fast-forwarded to `main` when the scheduler is
-configured for that repository. The coordinator reviews all changes.
+before changing a repository. The permanent project service works in each
+repository's main checkout under a single-worker lock and pushes tested commits
+to `main`; the queue scheduler uses isolated worktrees. Tags, releases, version
+bumps, and organization settings are coordinator-only.
 
 `numeric-lua-agents` and `.github` are **coordinator-only** and are not in the
 agent scheduler.
